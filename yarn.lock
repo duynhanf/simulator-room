@@ -217,6 +217,16 @@
     "@babel/helper-validator-identifier" "^7.19.1"
     to-fast-properties "^2.0.0"
 
+"@babylonjs/core@^5.52.0":
+  version "5.52.0"
+  resolved "https://registry.yarnpkg.com/@babylonjs/core/-/core-5.52.0.tgz#8a5597927f81f1440cace8b03b8f3a0131893166"
+  integrity sha512-BSC4f2vB96elvhJqdiIBJ/Mdn7pHRVg/KjYopY8vs6WgMpn34IDvvrpG1IIbOOzALpnvBMl8xao3ugFSmVmkpg==
+
+"@babylonjs/gui@^5.52.0":
+  version "5.52.0"
+  resolved "https://registry.yarnpkg.com/@babylonjs/gui/-/gui-5.52.0.tgz#85ca15599b6136dfe373e6ea420eaddda21d72e0"
+  integrity sha512-FOlUQLlYD/eBDZVI2k6jRtRZi+H45zOA5Cn4DKpQKOJaS+a0W6ZDk0AOXhLvxUBLjCBU+8E0pV5EDMcar4uM0A==
+
 "@emotion/babel-plugin@^11.10.6":
   version "11.10.6"
   resolved "https://registry.yarnpkg.com/@emotion/babel-plugin/-/babel-plugin-11.10.6.tgz#a68ee4b019d661d6f37dec4b8903255766925ead"
@@ -1262,6 +1272,13 @@ quick-lru@^5.1.1:
   resolved "https://registry.yarnpkg.com/quick-lru/-/quick-lru-5.1.1.tgz#366493e6b3e42a3a6885e2e99d18f80fb7a8c932"
   integrity sha512-WuyALRjWPDGtt/wzJiadO5AXY+8hZ80hVpe6MyivgraREW751X3SbhRvG3eLKOYN+8VEvqLcf3wdnt44Z4S4SA==
 
+react-babylonjs@^3.1.15:
+  version "3.1.15"
+  resolved "https://registry.yarnpkg.com/react-babylonjs/-/react-babylonjs-3.1.15.tgz#652460197df11a63fe89c5066d4f50189ec18ffd"
+  integrity sha512-Jr2b9D0JTnYcEubCBpVW7y+oQA7+3lTD/oUQWHphsw/k3kd4rRmDr4Itteht0P6050Z3JJelXqqkge+J36q2og==
+  dependencies:
+    react-reconciler "^0.27.0"
+
 react-dom@^18.2.0:
   version "18.2.0"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-18.2.0.tgz#22aaf38708db2674ed9ada224ca4aa708d821e3d"
@@ -1279,6 +1296,14 @@ react-is@^18.2.0:
   version "18.2.0"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-18.2.0.tgz#199431eeaaa2e09f86427efbb4f1473edb47609b"
   integrity sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==
+
+react-reconciler@^0.27.0:
+  version "0.27.0"
+  resolved "https://registry.yarnpkg.com/react-reconciler/-/react-reconciler-0.27.0.tgz#360124fdf2d76447c7491ee5f0e04503ed9acf5b"
+  integrity sha512-HmMDKciQjYmBRGuuhIaKA1ba/7a+UsM5FzOZsMO2JYHt9Jh8reCb7j1eDC95NOyUlKM9KRyvdx0flBuDvYSBoA==
+  dependencies:
+    loose-envify "^1.1.0"
+    scheduler "^0.21.0"
 
 react-refresh@^0.14.0:
   version "0.14.0"
@@ -1353,6 +1378,13 @@ run-parallel@^1.1.9:
   integrity sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==
   dependencies:
     queue-microtask "^1.2.2"
+
+scheduler@^0.21.0:
+  version "0.21.0"
+  resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.21.0.tgz#6fd2532ff5a6d877b6edb12f00d8ab7e8f308820"
+  integrity sha512-1r87x5fz9MXqswA2ERLo0EbOAU74DpIUO090gIasYTqlVoJeMcl+Z1Rg7WHz+qtPujhS/hGIt9kxZOYBV3faRQ==
+  dependencies:
+    loose-envify "^1.1.0"
 
 scheduler@^0.23.0:
   version "0.23.0"
