@@ -13,12 +13,12 @@ function App() {
       <div className="mt-20">
         <Container maxWidth="lg">
           <div className="flex flex-col md:flex-row">
-            <div className="sidebar border-2 w-full md:w-1/4 rounded-t-lg md:rounded-l-lg p-4">
+            <div className="sidebar border-2 w-full md:w-1/4 rounded-t-lg md:rounded-t-none md:rounded-l-lg p-4">
               <h1>Room 1</h1>
               <p>top : {GROUND_SIZE / 2 + position.z}px</p>
               <p>left : {GROUND_SIZE / 2 - position.x}px</p>
             </div>
-            <div className="main border-2 w-full md:w-3/4 h-full border-t-0  md:border-l-0 rounded-b-lg md:rounded-r-lg p-1">
+            <div className="main border-2 w-full md:w-3/4 h-full border-t-0 md:border-t-2 md:border-l-0 rounded-b-lg md:rounded-b-none md:rounded-r-lg p-1">
               <RoomFrame
                 onUpdatePosition={(targetPosition) => {
                   setPosition({
