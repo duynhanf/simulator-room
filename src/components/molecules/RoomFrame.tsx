@@ -41,11 +41,7 @@ const RoomFrame: React.FC<RoomFrameProps> = ({ onUpdatePosition }) => {
               intensity={0.5}
             />
             <Suspense fallback={null}>
-              <Shape
-                size={UNIT_SIZE}
-                onClickObject={(e) => console.log(e)}
-                onUpdatePosition={onUpdatePosition}
-              />
+              <Shape size={UNIT_SIZE} onUpdatePosition={onUpdatePosition} />
             </Suspense>
 
             <ground
