@@ -44,7 +44,7 @@ const Header = () => {
 
   return (
     <>
-      <AppBar component="nav">
+      <AppBar component="nav" style={{ position: 'unset' }}>
         <Container maxWidth="lg">
           <Toolbar>
             <IconButton

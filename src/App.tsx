@@ -6,11 +6,9 @@ import HomePage from './components/pages/HomePage';
 function App() {
   return (
     <MainLayout>
-      <div className="mt-20">
-        <Container maxWidth="lg">
-          <HomePage />
-        </Container>
-      </div>
+      <Container maxWidth="lg" className="mt-20">
+        <HomePage />
+      </Container>
     </MainLayout>
   );
 }

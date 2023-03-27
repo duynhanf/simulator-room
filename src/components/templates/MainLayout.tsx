@@ -10,7 +10,7 @@ const MainLayout: React.FC<Props> = ({ children }) => {
   return (
     <>
       <Header />
-      <div>{children}</div>
+      {children}
       <Footer />
     </>
   );
