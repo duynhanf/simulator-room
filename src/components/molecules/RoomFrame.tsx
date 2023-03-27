@@ -3,7 +3,7 @@ import { Vector3 } from '@babylonjs/core/Maths/math.vector';
 import '@babylonjs/core/Loading/loadingScreen';
 import { Engine, Scene } from 'react-babylonjs';
 
-import SwitchCameraView from '../atoms/SwitchCameraView';
+import SwitchCamera from '../atoms/SwitchCamera';
 import Shape from '../atoms/Shape';
 import { GROUND_SIZE, UNIT_SIZE } from '../../utils/constants';
 
@@ -56,7 +56,7 @@ const RoomFrame: React.FC<RoomFrameProps> = ({ onUpdatePosition }) => {
             />
           </Scene>
         </Engine>
-        <SwitchCameraView
+        <SwitchCamera
           groundSize={GROUND_SIZE}
           onToggleCamera={(position) => {
             setCameraPosition(position);

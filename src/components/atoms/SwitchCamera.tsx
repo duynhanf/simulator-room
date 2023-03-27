@@ -14,7 +14,7 @@ enum CameraType {
   FRONT,
 }
 
-const SwitchCameraView: React.FC<Props> = ({ onToggleCamera, groundSize }) => {
+const SwitchCamera: React.FC<Props> = ({ onToggleCamera, groundSize }) => {
   const [cameraType, setCameraType] = useState<CameraType>(CameraType.TOP);
 
   return (
@@ -37,4 +37,4 @@ const SwitchCameraView: React.FC<Props> = ({ onToggleCamera, groundSize }) => {
   );
 };
 
-export default SwitchCameraView;
+export default SwitchCamera;
