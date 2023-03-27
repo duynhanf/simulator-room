@@ -12,7 +12,7 @@ interface RoomFrameProps {
 
 const RoomFrame: React.FC<RoomFrameProps> = ({ onUpdatePosition }) => {
   const [cameraPosition, setCameraPosition] = useState<Vector3>(
-    new Vector3(0, 15, 0)
+    new Vector3(0, GROUND_SIZE * 1.618, 0)
   );
 
   return (
@@ -21,12 +21,12 @@ const RoomFrame: React.FC<RoomFrameProps> = ({ onUpdatePosition }) => {
         <Engine
           antialias
           adaptToDeviceRatio
-          canvasId="babylonJS"
+          canvasId="simulatorRoom"
           engineOptions={{ preserveDrawingBuffer: true, stencil: true }}
         >
           <Scene>
             <arcRotateCamera
-              name="Camera"
+              name="camera"
               alpha={(3 * Math.PI) / 2}
               beta={Math.PI / 2}
               radius={10}
@@ -35,7 +35,7 @@ const RoomFrame: React.FC<RoomFrameProps> = ({ onUpdatePosition }) => {
             />
 
             <hemisphericLight
-              name="light1"
+              name="ligh1"
               direction={Vector3.Up()}
               intensity={0.5}
             />
@@ -55,6 +55,7 @@ const RoomFrame: React.FC<RoomFrameProps> = ({ onUpdatePosition }) => {
           </Scene>
         </Engine>
         <SwitchCameraView
+          groundSize={GROUND_SIZE}
           onToggleCamera={(position) => {
             setCameraPosition(position);
           }}
