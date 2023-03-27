@@ -28,11 +28,15 @@ const Shape: React.FC<ShapeProp> = ({ onClickObject, onUpdatePosition }) => {
   });
 
   const validateDrag = (targetPosition: Vector3) => {
-    onUpdatePosition(targetPosition);
-    return (
-      Math.max(Math.abs(targetPosition.x), Math.abs(targetPosition.z)) <=
-      GROUND_SIZE / 2 - 0.5
+    const maxXZ = Math.max(
+      Math.abs(targetPosition.x),
+      Math.abs(targetPosition.z)
     );
+    if (maxXZ <= GROUND_SIZE / 2 - 0.5) {
+      onUpdatePosition(targetPosition);
+      return true;
+    }
+    return false;
   };
 
   return (
