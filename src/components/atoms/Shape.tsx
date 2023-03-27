@@ -4,7 +4,7 @@ import '@babylonjs/core/Loading/loadingScreen';
 import { useAssetManager } from 'react-babylonjs';
 
 import { validateDragArea } from '../../utils/common-functions';
-import { TextureAssets } from '../../utils/constants';
+import { GROUND_SIZE, TextureAssets } from '../../utils/constants';
 import { TextureAssetTask } from '@babylonjs/core';
 
 interface ShapeProp {
@@ -19,7 +19,7 @@ const Shape: React.FC<ShapeProp> = ({ name, size, onUpdatePosition }) => {
   });
 
   const validateDrag = (targetPosition: Vector3) => {
-    const isValid = validateDragArea(targetPosition, size);
+    const isValid = validateDragArea(targetPosition, GROUND_SIZE, size);
     if (isValid) {
       onUpdatePosition(targetPosition);
     }
