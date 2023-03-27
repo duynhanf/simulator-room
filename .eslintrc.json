@@ -12,6 +12,7 @@
   },
   "plugins": ["react", "@typescript-eslint"],
   "rules": {
-    "react/no-unknown-property": "false"
+    "no-console": "warn",
+    "react/no-unknown-property": "off"
   }
 }
