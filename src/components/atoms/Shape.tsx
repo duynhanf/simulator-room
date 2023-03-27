@@ -1,8 +1,8 @@
-import { ActionEvent, TextureAssetTask } from '@babylonjs/core';
+import { TextureAssetTask } from '@babylonjs/core';
 import { Vector3 } from '@babylonjs/core/Maths/math.vector';
 import '@babylonjs/core/Loading/loadingScreen';
 import React from 'react';
-import { Task, TaskType, useAssetManager, useClick } from 'react-babylonjs';
+import { Task, TaskType, useAssetManager } from 'react-babylonjs';
 import { GROUND_SIZE } from '../../utils/constants';
 
 const textureAssets: Task[] = [
@@ -15,21 +15,12 @@ const textureAssets: Task[] = [
 
 interface ShapeProp {
   size: number;
-  onClickObject?: (e: ActionEvent) => void;
   onUpdatePosition: (position: Vector3) => void;
 }
 
-const Shape: React.FC<ShapeProp> = ({
-  size,
-  onClickObject,
-  onUpdatePosition,
-}) => {
+const Shape: React.FC<ShapeProp> = ({ size, onUpdatePosition }) => {
   const assetManagerResult = useAssetManager(textureAssets, {
     useDefaultLoadingScreen: true,
-  });
-
-  const [ref] = useClick((e) => {
-    onClickObject && onClickObject(e);
   });
 
   const validateDrag = (targetPosition: Vector3) => {

@@ -8,7 +8,7 @@ const HomePage = () => {
   const [position, setPosition] = useState({ x: 0, z: 0 });
 
   const onUpdatePositionHandle = (targetPosition: Vector3) => {
-    let actualPosition = {
+    const actualPosition = {
       x: targetPosition._x,
       z: targetPosition._z,
     };
