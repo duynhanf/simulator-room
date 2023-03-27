@@ -1,9 +1,8 @@
-import { useState } from "react";
-import { Vector3 } from "@babylonjs/core";
-import { Container } from "@mui/material";
-import { UNIT_SIZE } from "../../utils/constants";
-import Sidebar from "../molecules/Sidebar";
-import RoomFrame from "../molecules/RoomFrame";
+import { useState } from 'react';
+import { Vector3 } from '@babylonjs/core';
+import { UNIT_SIZE } from '../../utils/constants';
+import Sidebar from '../molecules/Sidebar';
+import RoomFrame from '../molecules/RoomFrame';
 
 const HomePage = () => {
   const [position, setPosition] = useState({ x: 0, z: 0 });

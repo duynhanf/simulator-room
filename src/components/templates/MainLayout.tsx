@@ -1,6 +1,6 @@
-import React from "react";
-import Footer from "../organisms/Footer";
-import Header from "../organisms/Header";
+import React from 'react';
+import Footer from '../organisms/Footer';
+import Header from '../organisms/Header';
 
 interface Props {
   children: React.ReactNode | JSX.Element;

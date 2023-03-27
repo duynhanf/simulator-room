@@ -1,10 +1,11 @@
-import { Vector3 } from "@babylonjs/core/Maths/math.vector";
-import "@babylonjs/core/Loading/loadingScreen";
-import { Suspense, useState } from "react";
-import { Engine, Scene } from "react-babylonjs";
-import SwitchCameraView from "../atoms/SwitchCameraView";
-import Shape from "../atoms/Shape";
-import { GROUND_SIZE, UNIT_SIZE } from "../../utils/constants";
+import React from 'react';
+import { Vector3 } from '@babylonjs/core/Maths/math.vector';
+import '@babylonjs/core/Loading/loadingScreen';
+import { Suspense, useState } from 'react';
+import { Engine, Scene } from 'react-babylonjs';
+import SwitchCameraView from '../atoms/SwitchCameraView';
+import Shape from '../atoms/Shape';
+import { GROUND_SIZE, UNIT_SIZE } from '../../utils/constants';
 
 interface RoomFrameProps {
   onUpdatePosition: (position: Vector3) => void;
@@ -17,7 +18,7 @@ const RoomFrame: React.FC<RoomFrameProps> = ({ onUpdatePosition }) => {
 
   return (
     <>
-      <div style={{ flex: 1, display: "flex" }} className="relative">
+      <div style={{ flex: 1, display: 'flex' }} className="relative">
         <Engine
           antialias
           adaptToDeviceRatio

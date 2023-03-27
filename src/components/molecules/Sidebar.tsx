@@ -1,6 +1,6 @@
-import React from "react";
-import { Position } from "../../models";
-import { GROUND_SIZE } from "../../utils/constants";
+import React from 'react';
+import { Position } from '../../models';
+import { GROUND_SIZE } from '../../utils/constants';
 
 interface Props {
   position: Position;

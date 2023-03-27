@@ -1,6 +1,7 @@
-import { Container } from "@mui/material";
-import MainLayout from "./components/templates/MainLayout";
-import HomePage from "./components/pages/HomePage";
+import React from 'react';
+import { Container } from '@mui/material';
+import MainLayout from './components/templates/MainLayout';
+import HomePage from './components/pages/HomePage';
 
 function App() {
   return (

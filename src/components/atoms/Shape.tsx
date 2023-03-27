@@ -1,15 +1,15 @@
-import { ActionEvent, Color3, TextureAssetTask } from "@babylonjs/core";
-import { Vector3 } from "@babylonjs/core/Maths/math.vector";
-import "@babylonjs/core/Loading/loadingScreen";
-import React from "react";
-import { Task, TaskType, useAssetManager, useClick } from "react-babylonjs";
-import { GROUND_SIZE } from "../../utils/constants";
+import { ActionEvent, TextureAssetTask } from '@babylonjs/core';
+import { Vector3 } from '@babylonjs/core/Maths/math.vector';
+import '@babylonjs/core/Loading/loadingScreen';
+import React from 'react';
+import { Task, TaskType, useAssetManager, useClick } from 'react-babylonjs';
+import { GROUND_SIZE } from '../../utils/constants';
 
 const textureAssets: Task[] = [
   {
     taskType: TaskType.Texture,
-    url: "./topview.png",
-    name: "topview",
+    url: './topview.png',
+    name: 'topview',
   },
 ];
 
@@ -49,12 +49,12 @@ const Shape: React.FC<ShapeProp> = ({
         <standardMaterial name="topview">
           <texture
             fromInstance={
-              (assetManagerResult.taskNameMap["topview"] as TextureAssetTask)
+              (assetManagerResult.taskNameMap['topview'] as TextureAssetTask)
                 .texture
             }
             assignTo="diffuseTexture"
             hasAlpha={false}
-            url={""}
+            url={''}
           />
         </standardMaterial>
         <pointerDragBehavior

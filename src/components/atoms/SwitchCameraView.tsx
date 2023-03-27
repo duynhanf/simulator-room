@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import SwitchCameraIcon from "@mui/icons-material/SwitchCamera";
-import { Tooltip } from "@mui/material";
-import { Vector3 } from "@babylonjs/core";
+import SwitchCameraIcon from '@mui/icons-material/SwitchCamera';
+import { Tooltip } from '@mui/material';
+import { Vector3 } from '@babylonjs/core';
 
 interface Props {
   groundSize: number;
