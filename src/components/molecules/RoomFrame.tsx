@@ -4,7 +4,7 @@ import { Suspense, useState } from "react";
 import { Engine, Scene } from "react-babylonjs";
 import SwitchCameraView from "../atoms/SwitchCameraView";
 import Shape from "../atoms/Shape";
-import { GROUND_SIZE } from "../../utils/constants";
+import { GROUND_SIZE, UNIT_SIZE } from "../../utils/constants";
 
 interface RoomFrameProps {
   onUpdatePosition: (position: Vector3) => void;
@@ -41,6 +41,7 @@ const RoomFrame: React.FC<RoomFrameProps> = ({ onUpdatePosition }) => {
             />
             <Suspense fallback={null}>
               <Shape
+                size={UNIT_SIZE}
                 onClickObject={(e) => console.log(e)}
                 onUpdatePosition={onUpdatePosition}
               />
