@@ -1,43 +1,39 @@
-import { TextureAssetTask } from '@babylonjs/core';
+import React from 'react';
 import { Vector3 } from '@babylonjs/core/Maths/math.vector';
 import '@babylonjs/core/Loading/loadingScreen';
-import React from 'react';
-import { Task, TaskType, useAssetManager } from 'react-babylonjs';
-import { GROUND_SIZE } from '../../utils/constants';
+import { useAssetManager } from 'react-babylonjs';
 
-const textureAssets: Task[] = [
-  {
-    taskType: TaskType.Texture,
-    url: './topview.png',
-    name: 'topview',
-  },
-];
+import { validateDragArea } from '../../utils/common-functions';
+import { TextureAssets } from '../../utils/constants';
+import { TextureAssetTask } from '@babylonjs/core';
 
 interface ShapeProp {
+  name: string;
   size: number;
   onUpdatePosition: (position: Vector3) => void;
 }
 
-const Shape: React.FC<ShapeProp> = ({ size, onUpdatePosition }) => {
-  const assetManagerResult = useAssetManager(textureAssets, {
+const Shape: React.FC<ShapeProp> = ({ name, size, onUpdatePosition }) => {
+  const assetManagerResult = useAssetManager(TextureAssets, {
     useDefaultLoadingScreen: true,
   });
 
   const validateDrag = (targetPosition: Vector3) => {
-    if (
-      Math.abs(targetPosition.x) <= GROUND_SIZE / 2 - size / 2 &&
-      Math.abs(targetPosition.z) <= GROUND_SIZE / 2 - size / 2
-    ) {
+    const isValid = validateDragArea(targetPosition, size);
+    if (isValid) {
       onUpdatePosition(targetPosition);
-      return true;
     }
-    return false;
+    return isValid;
   };
 
   return (
     <>
-      <box name="blue2" size={size} position={new Vector3(0, size / 2, 0)}>
-        <standardMaterial name="topview">
+      <box
+        name={`box-${name}`}
+        size={size}
+        position={new Vector3(0, size / 2, 0)}
+      >
+        <standardMaterial name={name}>
           <texture
             fromInstance={
               (assetManagerResult.taskNameMap['topview'] as TextureAssetTask)

@@ -13,15 +13,15 @@ const HomePage = () => {
       z: targetPosition._z,
     };
     if (actualPosition.x < 0) {
-      actualPosition.x = actualPosition.x - UNIT_SIZE / 2;
+      actualPosition.x -= UNIT_SIZE / 2;
     } else {
-      actualPosition.x = actualPosition.x + UNIT_SIZE / 2;
+      actualPosition.x += UNIT_SIZE / 2;
     }
 
     if (actualPosition.z < 0) {
-      actualPosition.z = actualPosition.z - UNIT_SIZE / 2;
+      actualPosition.z -= UNIT_SIZE / 2;
     } else {
-      actualPosition.z = actualPosition.z + UNIT_SIZE / 2;
+      actualPosition.z += UNIT_SIZE / 2;
     }
     setPosition(actualPosition);
   };

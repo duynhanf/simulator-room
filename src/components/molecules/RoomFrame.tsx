@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Suspense, useState } from 'react';
 import { Vector3 } from '@babylonjs/core/Maths/math.vector';
 import '@babylonjs/core/Loading/loadingScreen';
-import { Suspense, useState } from 'react';
 import { Engine, Scene } from 'react-babylonjs';
+
 import SwitchCameraView from '../atoms/SwitchCameraView';
 import Shape from '../atoms/Shape';
 import { GROUND_SIZE, UNIT_SIZE } from '../../utils/constants';
@@ -18,7 +18,7 @@ const RoomFrame: React.FC<RoomFrameProps> = ({ onUpdatePosition }) => {
 
   return (
     <>
-      <div style={{ flex: 1, display: 'flex' }} className="relative">
+      <div className="flex flex-1 relative">
         <Engine
           antialias
           adaptToDeviceRatio
@@ -41,7 +41,11 @@ const RoomFrame: React.FC<RoomFrameProps> = ({ onUpdatePosition }) => {
               intensity={0.5}
             />
             <Suspense fallback={null}>
-              <Shape size={UNIT_SIZE} onUpdatePosition={onUpdatePosition} />
+              <Shape
+                name="topview"
+                size={UNIT_SIZE}
+                onUpdatePosition={onUpdatePosition}
+              />
             </Suspense>
 
             <ground
