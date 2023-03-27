@@ -14,11 +14,16 @@ const textureAssets: Task[] = [
 ];
 
 interface ShapeProp {
+  size: number;
   onClickObject?: (e: ActionEvent) => void;
   onUpdatePosition: (position: Vector3) => void;
 }
 
-const Shape: React.FC<ShapeProp> = ({ onClickObject, onUpdatePosition }) => {
+const Shape: React.FC<ShapeProp> = ({
+  size,
+  onClickObject,
+  onUpdatePosition,
+}) => {
   const assetManagerResult = useAssetManager(textureAssets, {
     useDefaultLoadingScreen: true,
   });
@@ -28,11 +33,10 @@ const Shape: React.FC<ShapeProp> = ({ onClickObject, onUpdatePosition }) => {
   });
 
   const validateDrag = (targetPosition: Vector3) => {
-    const maxXZ = Math.max(
-      Math.abs(targetPosition.x),
-      Math.abs(targetPosition.z)
-    );
-    if (maxXZ <= GROUND_SIZE / 2 - 0.5) {
+    if (
+      Math.abs(targetPosition.x) <= GROUND_SIZE / 2 - size / 2 &&
+      Math.abs(targetPosition.z) <= GROUND_SIZE / 2 - size / 2
+    ) {
       onUpdatePosition(targetPosition);
       return true;
     }
@@ -41,7 +45,7 @@ const Shape: React.FC<ShapeProp> = ({ onClickObject, onUpdatePosition }) => {
 
   return (
     <>
-      <box name="blue2" size={1} position={new Vector3(0, 0.5, 0)}>
+      <box name="blue2" size={size} position={new Vector3(0, size / 2, 0)}>
         <standardMaterial name="topview">
           <texture
             fromInstance={
@@ -54,7 +58,7 @@ const Shape: React.FC<ShapeProp> = ({ onClickObject, onUpdatePosition }) => {
           />
         </standardMaterial>
         <pointerDragBehavior
-          dragPlaneNormal={new Vector3(0, 0.5, 0)}
+          dragPlaneNormal={new Vector3(0, size / 2, 0)}
           validateDrag={validateDrag}
         />
       </box>
