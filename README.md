@@ -1,29 +1,34 @@
 ## Simulator room
 
+## About
+
+A demo project showing a simulator room which has a image-based 3D object using BabylonJS
+
+![screenshot](./screenshots/screenshot.png)
+
+### Environment
+
+|               |         |
+| :-----------: | :-----: |
+|     React     |  18.x   |
+|  Babylon.js   | 5.52.0  |
+| React-babylon | 3.1.15  |
+|     Vite      |  4.2.0  |
+|      Mui      | 5.11.14 |
+|  TailwindCSS  |  3.2.7  |
+
 ### Usage and Installation
 
-#### Clone the repository
-
 ```bash
+# Clone the repository
 git clone https://github.com/duynhanf/simulator-room
-```
 
-#### Install dependencies
+# Install dependencies
+yarn install
 
-```bash
-yarn
-
-or
-
-npm install
-```
-
-#### Runs the app in the development mode
-
-```bash
+# Runs the app in the development mode
 yarn dev
 
-or
-
-npm run dev
+# testing
+yarn test
 ```
